@@ -19,6 +19,85 @@ st.set_page_config(
 )
 
 # -----------------------------------------------------------------------------
+# CSS STYLING
+# -----------------------------------------------------------------------------
+st.markdown("""
+    <style>
+        /* Main Background */
+        .stApp {
+            background-color: #0b0e11;
+        }
+        
+        /* Sidebar */
+        [data-testid="stSidebar"] {
+            background-color: #151921;
+        }
+        
+        /* Typography */
+        h1, h2, h3 {
+            color: #ffffff !important;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        p, div, label {
+            color: #d1d5db;
+        }
+        
+        /* Buttons */
+        .stButton>button {
+            background-color: #8b31c7;
+            color: white;
+            border-radius: 8px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        .stButton>button:hover {
+            background-color: #a14add;
+            border: 1px solid #d4a5f3;
+        }
+        
+        /* Cards / Metrics / Expanders styling */
+        div[data-testid="stMetric"], div[data-testid="stExpander"] {
+            background-color: #1a1e26;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid #2d333b;
+        }
+        
+        /* Metric Label & Value Colors */
+        [data-testid="stMetricLabel"] {
+            color: #9ca3af !important;
+        }
+        [data-testid="stMetricValue"] {
+            color: #ffffff !important;
+        }
+        
+        /* Custom Header Gradient Text */
+        .gradient-text {
+            background: -webkit-linear-gradient(45deg, #a742ea, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* Expander Header */
+        .streamlit-expanderHeader {
+            background-color: transparent !important;
+            color: #ffffff !important;
+        }
+        
+        /* Scrollbars (Webkit) */
+        ::-webkit-scrollbar {
+            width: 8px;
+            background: #0b0e11;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2d333b; 
+            border-radius: 4px;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+# -----------------------------------------------------------------------------
 # 2. HELPER FUNCTIONS
 # -----------------------------------------------------------------------------
 def get_kmz_descriptions(kmz_files):
