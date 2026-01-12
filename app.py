@@ -94,6 +94,29 @@ st.markdown("""
             background: #2d333b; 
             border-radius: 4px;
         }
+
+        /* FIX: Force Dark Theme on HTML Tables (PopupInfo) */
+        div[data-testid="stMarkdownContainer"] table {
+            width: 100% !important;
+            border-collapse: collapse !important;
+            background-color: #1a1e26 !important;
+            color: #ffffff !important;
+        }
+        div[data-testid="stMarkdownContainer"] tr {
+            background-color: #1a1e26 !important;
+            border-bottom: 1px solid #2d333b !important;
+        }
+        div[data-testid="stMarkdownContainer"] td, 
+        div[data-testid="stMarkdownContainer"] th {
+            background-color: #1a1e26 !important; /* Override light blue backgrounds from KML */
+            color: #ffffff !important;           /* Force white text */
+            border: none !important;
+            padding: 8px !important;
+        }
+        div[data-testid="stMarkdownContainer"] th {
+            border-bottom: 2px solid #8b31c7 !important; /* Purple accent for headers */
+            font-weight: bold !important;
+        }
     </style>
 """, unsafe_allow_html=True)
 
